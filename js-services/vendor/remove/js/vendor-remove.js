@@ -1,7 +1,7 @@
 
 $(() => {
-    let urlParms = parseUrl();
-    let id = +urlParms.id;
+    $("#zGet").on("click", () => {
+        let id = $("#zId").val();
         vendorGetByPk(id)
         .done(res => {
             console.debug(res);
@@ -11,8 +11,9 @@ $(() => {
             $("#message").html("<b>Vendor not found!</b>")
             console.error(err);
     });
-    $("#dSave").on("click", () => {
-        change();
+});
+    $("#dRemove").on("click", () => {
+        remove();
     });
 });
 
@@ -30,29 +31,18 @@ const display = (vendor) => {
 
 
 
-const change = () => {
-    let vendor = {};
-    vendor.id = $("#dId").val();
-    vendor.code = $("#dCode").val();
-    vendor.name = $("#dName").val();
-    vendor.address = $("#dAddress").val();
-    vendor.city = $("#dCity").val();
-    vendor.state = $("#dState").val();
-    vendor.zip = $("#dZip").val();
-    vendor.phone = $("#dPhone").val();
-    vendor.email = $("#dEmail").val();
-
+const remove = () => {
+    let id = $("")
     vendor.id = +vendor.id;
-    vendorChange(vendor)
+    vendorRemove(id)
         .done(res => {
             console.debug(res);
             console.log("Change successful!");
-            $("#message").html("<b>Change Successful!</b>")
-            window.location.href = "../getall/vendor-getall.html";
+            $("#message").html("<b>Remove Successful!</b>")
         })
         .fail(err => {
             console.error(err);
-            $("#message").html("<b>Change Failed!</b>")
+            $("#message").html("<b>Remove Failed!</b>")
         });
 
 };

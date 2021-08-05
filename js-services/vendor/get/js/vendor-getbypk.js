@@ -1,14 +1,24 @@
 
 $(() => {
-    $("#zGet").on("click", () => {
-        let id = $("#zId").val();
+
+    let urlParms = parseUrl();
+    let id = +urlParms["id"];
         vendorGetByPk(id)
             .done(res => {
                 console.debug(res);
                 display(res);
             })
             .fail(err => console.error(err));
-    });
+
+    // $("#zGet").on("click", () => {
+    //     let id = $("#zId").val();
+    //     vendorGetByPk(id)
+    //         .done(res => {
+    //             console.debug(res);
+    //             display(res);
+    //         })
+    //         .fail(err => console.error(err));
+    // });
 });
 
 const display = (vendor) => {

@@ -5,14 +5,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../vendor.service.js"></script>
     <script src="../vendor.class.js"></script>
-    <script src="js/vendor-getbypk.js"></script>
-    <script src="../parse-url.js"></script>
+    <script src="js/vendor-remove.js"></script>
 </head>
 <body>
-    <!-- <div>
+    <div>
         <input id="zId" type="number" value="1">
         <button id="zGet">Get</button>
-    </div> -->
+    </div>
     <table>
         <tr>
             <td>Id</td>
@@ -20,37 +19,38 @@
         </tr>
         <tr>
             <td>Code</td>
-            <td><input id="dCode" type="text" disabled></td>
+            <td><input id="dCode" type="text"></td>
         </tr>
         <tr>
             <td>Name</td>
-            <td><input id="dName" type="text" disabled></td>
+            <td><input id="dName" type="text"></td>
         </tr>
         <tr>
             <td>Address</td>
-            <td><input id="dAddress" type="text" disabled></td>
+            <td><input id="dAddress" type="text"></td>
         </tr>
         <tr>
             <td>City</td>
-            <td><input id="dCity" type="text" disabled></td>
+            <td><input id="dCity" type="text"></td>
         </tr>
         <tr>
             <td>State</td>
-            <td><input id="dState" type="text" disabled></td>
+            <td><input id="dState" type="text"></td>
         </tr>
         <tr>
             <td>Zip</td>
-            <td><input id="dZip" type="text" disabled></td>
+            <td><input id="dZip" type="text"></td>
         </tr>
         <tr>
             <td>Phone</td>
-            <td><input id="dPhone" type="text" disabled></td>
+            <td><input id="dPhone" type="text"></td>
         </tr>
         <tr>
             <td>Email</td>
-            <td><input id="dEmail" type="text" disabled></td>
+            <td><input id="dEmail" type="text"></td>
         </tr>
     </table>
-    <a href="../getall/vendor-getall.html">Back to list</a>
+    <button id="dRemove">Remove</button>
+    <label id="message"></label>
 </body>
 </html>
